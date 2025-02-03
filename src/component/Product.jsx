@@ -50,7 +50,7 @@ const Product = () => {
       <Navbar />
       <div className="product-list bg-white">
         {products.map((product) => (
-          <div className="product-card">
+          <div className="product-card" key={product.id}>
             <img src={product.image} alt={product.title} />
             <h2>
               {product.title.length > 20

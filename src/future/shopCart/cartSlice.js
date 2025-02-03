@@ -25,11 +25,21 @@ const cartSlice = createSlice({
         0
       );
     },
+    updateTempQuantity(state, action) {
+      const tempItem = state.tempItems.find(
+        (item) => item.id === action.payload.id
+      );
+      if(tempItem){
+        tempItem.quantity=action.payload.quantity;
+      }
+    },
+
     removeFromCart(state, action) {
       state.items = state.items.filter((item) => item.id !== action.payload);
       state.tempItems = [...state.items];
     },
   },
 });
-export const { addToCart, removeFromCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, updateTempQuantity } =
+  cartSlice.actions;
 export default cartSlice.reducer;
