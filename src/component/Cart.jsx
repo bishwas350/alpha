@@ -3,7 +3,7 @@ import React from "react";
 const Cart = () => {
   return (
     <>
-     <div className=" justify-center flex">
+     <div className=" justify-center flex ">
      <div className="cart-page-container">
         <div className="cart-container">
           <h2>Your Cart</h2>
