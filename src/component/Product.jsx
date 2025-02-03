@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../future/shopCart/prodectSlice";
 import Container from "./Container";
+import { addToCart } from "../future/shopCart/cartSlice";
 
 const Product = () => {
   const { items: products, status } = useSelector((state) => state.products);
@@ -57,7 +58,7 @@ const Product = () => {
                 : product.title}
             </h2>
             <p>৳{product.price}</p>
-            <button>Add To Cart</button>
+            <button onClick={()=>dispatch(addToCart(product))}>Add To Cart</button>
           </div>
         ))}
       </div>
