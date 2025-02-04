@@ -1,16 +1,18 @@
-import React from 'react'
+import React from "react";
+import { useSelector } from "react-redux";
 
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 const Navbar = () => {
+  const cartItems = useSelector((state) => state.cart.items);
   return (
     <nav>
-        <h1>Shopping Cart</h1>
-        <div>
-            <Link to ="/" >Home</Link>
-            <Link to ="/Cart">Cart</Link>
-        </div>
+      <h1>Shopping Cart</h1>
+      <div>
+        <Link to="/">Home</Link>
+        <Link to="/Cart">Cart({cartItems.length})</Link>
+      </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;
